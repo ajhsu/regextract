@@ -24,3 +24,29 @@ test('Extract text as expected', t => {
 
   t.end();
 });
+
+test('Extract text as expected', t => {
+  var result = extract('hello world', /hello/);
+
+  t.deepEquals(result.matches, ['hello']);
+  t.deepEquals(result.extracts, []);
+
+  t.end();
+});
+
+test('Error handling', t => {
+
+  t.throws(function() {
+    var result = extract();
+  });
+
+  t.throws(function() {
+    var result = extract('Only text was given');
+  });
+
+  t.throws(function() {
+    var result = extract(/Only regex was given/g);
+  });
+
+  t.end();
+});
