@@ -1,10 +1,10 @@
 {
   "name": "regextract",
-  "version": "0.0.1",
-  "description": "Extract text with RegExp",
+  "version": "0.1.0",
+  "description": "Extracting text with Regular Express",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/tape \"tests/**/*.js\""
+    "test": "./node_modules/.bin/tape index.test.js"
   },
   "author": "AJ Hsu",
   "license": "MIT",
@@ -13,6 +13,6 @@
     "type": "git"
   },
   "devDependencies": {
-    "tape": "^4.6.3"
+    "tape": "^4.8.0"
   }
 }

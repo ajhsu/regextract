@@ -1,12 +1,21 @@
 'use strict';
 
 function extract(text, regex) {
-  var result = regex.exec(text);
+  var matches = [];
+  var extracts = [];
+  var execResult = null;
+  while ((execResult = regex.exec(text))) {
+    var extractCount = execResult.length - 1;
+    if (extractCount > 0) {
+      for (var extIter = 0; extIter < extractCount; extIter++) {
+        extracts.push(execResult[extIter + 1]);
+      }
+    }
+    matches.push(execResult[0]);
+  }
   return {
-    matches: result ? result[0] : null,
-    firstGroup: result.length >= 2 ? result[1] : null,
-    secondGroup: result.length >= 3 ? result[2] : null,
-    thirdGroup: result.length >= 4 ? result[3] : null
+    matches: matches,
+    extracts: extracts
   };
 }
 
