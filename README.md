@@ -1,6 +1,6 @@
 # regextract
 
-Extracting text with Regular Express
+Extracting text with Regular Expression
 
 [![npm](https://img.shields.io/npm/v/regextract.svg)](https://www.npmjs.com/package/regextract)
 [![Build Status](https://travis-ci.org/ajhsu/regextract.svg?branch=master)](https://travis-ci.org/ajhsu/regextract)

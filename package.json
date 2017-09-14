@@ -1,7 +1,7 @@
 {
   "name": "regextract",
-  "version": "0.1.0",
-  "description": "Extracting text with Regular Express",
+  "version": "0.1.1",
+  "description": "Extracting text with Regular Expression",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/tape index.test.js"
