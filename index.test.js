@@ -12,6 +12,7 @@ test('Extract text as expected', t => {
     'scale3d(2.0, 2.0, 1.0)'
   ]);
   t.deepEquals(result.extracts, ['0.5, 1, 1', '2.0, 2.0, 1.0']);
+  t.deepEquals(result.captured, ['0.5, 1, 1', '2.0, 2.0, 1.0']);
 
   t.end();
 });
@@ -21,6 +22,7 @@ test('Extract text as expected', t => {
 
   t.deepEquals(result.matches, ['iPhone6', 'iPhone7', 'iPhone8']);
   t.deepEquals(result.extracts, []);
+  t.deepEquals(result.captured, []);
 
   t.end();
 });
@@ -30,6 +32,7 @@ test('Extract text as expected', t => {
 
   t.deepEquals(result.matches, ['hello']);
   t.deepEquals(result.extracts, []);
+  t.deepEquals(result.captured, []);
 
   t.end();
 });

@@ -11,6 +11,30 @@ Extracting text with Regular Expression
 npm install regextract --save
 ```
 
+## API
+
+```js
+var result = extract(text, RegExp);
+```
+
+#### `result.matches`
+
+Type: Array
+
+Matches of RegExp patterns to the source text.
+
+#### `result.extracts`
+
+Type: Array
+
+Captured groups of capturing parentheses within RegExp patterns to the source text.
+
+#### `result.captured`
+
+Type: Array
+
+Alias to `result.extracts`.
+
 ## Usage
 
 Require package
@@ -20,12 +44,12 @@ var extract = require('regextract');
 ```
 
 
-Find multiple matches
+Find matches
 
 ```js
 extract('iPhone6, iPhone7, iPhone8, iPhoneX', /iPhone\d/g);
 
-// Outputs
+// You'll get:
 {
   matches: ['iPhone6', 'iPhone7', 'iPhone8'],
   extracts: []
@@ -37,7 +61,7 @@ Get extracted texts
 ```js
 extract('Price: NTD$299', /NTD\$(\d+)/g)
 
-// Outputs
+// You'll get:
 {
   matches: ['NTD$299'],
   extracts: ['299']

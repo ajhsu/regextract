@@ -3,6 +3,7 @@
 function extract(text, regex) {
   var appName = 'Regextract: ';
 
+  /* Do error-handling at first */
   if (typeof text === 'undefined') {
     throw new Error(appName, 'text must be string');
   }
@@ -10,10 +11,17 @@ function extract(text, regex) {
     throw new Error(appName, 'regex must be Regular Expression');
   }
 
+  /* Storage for matches and extracts */
   var matches = [];
   var extracts = [];
-  var execResult = null;
 
+  /*
+    It will runs multiple times
+    only when Regular Expression has global flag.
+    (cause it's a stateful regexp)
+    Otherwise, it only run once.
+  */
+  var execResult = null;
   do {
     if ((execResult = regex.exec(text))) {
       var extractCount = execResult.length - 1;
@@ -28,7 +36,8 @@ function extract(text, regex) {
 
   return {
     matches: matches,
-    extracts: extracts
+    extracts: extracts,
+    captured: extracts
   };
 }
 
