@@ -4,7 +4,7 @@
   "description": "Extracting text with Regular Expression",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/tape index.test.js"
+    "test": "tape index.test.js"
   },
   "author": "AJ Hsu",
   "license": "MIT",
@@ -13,6 +13,6 @@
     "type": "git"
   },
   "devDependencies": {
-    "tape": "^4.8.0"
+    "tape": "^4.10.1"
   }
 }
