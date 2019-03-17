@@ -1,16 +1,16 @@
 {
   "name": "regextract",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "Extracting text with Regular Expression",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajhsu/regextract.git"
+  },
+  "license": "MIT",
+  "author": "AJ Hsu <im.ajhsu@gmail.com>",
   "main": "index.js",
   "scripts": {
     "test": "tape index.test.js"
-  },
-  "author": "AJ Hsu",
-  "license": "MIT",
-  "repository": {
-    "url": "https://github.com/ajhsu/regextract.git",
-    "type": "git"
   },
   "devDependencies": {
     "tape": "^4.10.1"
