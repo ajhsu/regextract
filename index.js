@@ -1,35 +1,32 @@
 'use strict';
 
 function extract(text, regex) {
-  var appName = 'Regextract: ';
-
-  /* Do error-handling at first */
   if (typeof text === 'undefined') {
-    throw new Error(appName, 'text must be string');
+    throw new Error('The first parameter (text) is not assigned.');
   }
   if (typeof regex === 'undefined') {
-    throw new Error(appName, 'regex must be Regular Expression');
+    throw new Error('The second parameter (regexp) is not assigned.');
   }
 
-  /* Storage for matches and extracts */
+  // Storage for matches and extracts
   var matches = [];
   var extracts = [];
 
-  /*
-    It will runs multiple times
-    only when Regular Expression has global flag.
-    (cause it's a stateful regexp)
-    Otherwise, it only run once.
-  */
+  /**
+   * It will runs multiple times only when Regular Expression has global flag.
+   * Otherwise, it only run once.
+   */
   var execResult = null;
   do {
     if ((execResult = regex.exec(text))) {
       var extractCount = execResult.length - 1;
+      var nestedExtracts = [];
       if (extractCount > 0) {
         for (var extIter = 0; extIter < extractCount; extIter++) {
-          extracts.push(execResult[extIter + 1]);
+          nestedExtracts.push(execResult[extIter + 1]);
         }
       }
+      extracts.push(nestedExtracts);
       matches.push(execResult[0]);
     }
   } while (regex.global && execResult);
